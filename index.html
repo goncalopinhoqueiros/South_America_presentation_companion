@@ -1,133 +1,128 @@
 <!doctype html>
 <html lang="pt">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex, nofollow, noarchive">
-  <meta name="description" content="Página de apoio à apresentação sobre resistência ao VIH-1 na América do Sul.">
-  <title>O Futuro da Resistência ao VIH-1 na América do Sul</title>
-  <style>
-    :root { --ink:#182433; --muted:#627184; --line:#e4e9ef; --paper:#f5f7fa; --blue:#174a72; --blue2:#eaf2f8; }
-    * { box-sizing:border-box; }
-    body { margin:0; background:var(--paper); color:var(--ink); font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; }
-    header { background:linear-gradient(135deg,#123b5b,#23658b); color:white; padding:42px 20px 36px; }
-    .wrap { width:min(100% - 32px, 980px); margin:auto; }
-    .eyebrow { text-transform:uppercase; letter-spacing:.12em; font-size:.76rem; font-weight:700; opacity:.82; }
-    h1 { font-size:clamp(1.8rem,5vw,3rem); line-height:1.12; margin:.65rem 0 1rem; max-width:850px; }
-    .authors { color:#e3edf5; max-width:850px; font-size:.95rem; }
-    main { padding:26px 0 56px; }
-    .intro, .panel { background:white; border:1px solid var(--line); border-radius:16px; padding:22px; margin:0 0 20px; box-shadow:0 4px 18px rgba(20,40,60,.04); }
-    h2 { font-size:1.35rem; margin:0 0 12px; }
-    h3 { font-size:1.02rem; margin:0 0 6px; }
-    p { margin:.45rem 0 .8rem; }
-    .muted { color:var(--muted); }
-    .actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
-    .button { display:inline-block; text-decoration:none; border-radius:9px; padding:11px 16px; font-weight:650; background:var(--blue); color:white; }
-    .button.secondary { background:var(--blue2); color:var(--blue); }
-    .viewer { width:100%; height:min(78vh,850px); min-height:520px; border:1px solid var(--line); border-radius:12px; background:#eef2f6; }
-    .slides { display:grid; gap:10px; }
-    details { background:white; border:1px solid var(--line); border-radius:12px; padding:0 16px; }
-    summary { cursor:pointer; list-style:none; padding:15px 28px 15px 0; font-weight:700; position:relative; }
-    summary::-webkit-details-marker { display:none; }
-    summary:after { content:"＋"; position:absolute; right:0; color:var(--blue); }
-    details[open] summary:after { content:"−"; }
-    .detail-body { border-top:1px solid var(--line); padding:12px 0 14px; color:#344456; }
-    .detail-body p:last-child { margin-bottom:0; }
-    .tag { display:inline-block; background:var(--blue2); color:var(--blue); border-radius:20px; padding:3px 9px; font-size:.78rem; font-weight:700; margin-bottom:8px; }
-    footer { color:var(--muted); text-align:center; font-size:.85rem; padding:22px 12px 36px; }
-    a { color:#145b8b; }
-    @media (max-width:600px) {
-      header { padding:32px 0 28px; }
-      .intro,.panel { padding:17px; border-radius:13px; }
-      .viewer { height:68vh; min-height:430px; }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="description" content="Acompanhe a apresentação sobre resistência ao VIH-1 na América do Sul, diapositivo a diapositivo.">
+<title>Resistência ao VIH-1 na América do Sul · Apresentação</title>
+<style>
+:root{--bg:#0b1422;--panel:#142238;--panel2:#101d31;--line:#293c58;--text:#edf3fb;--muted:#a5b4c8;--accent:#50c7b4;--accent2:#f0b64b;--font:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font-family:var(--font)}
+body{ -webkit-font-smoothing:antialiased}
+#app{max-width:900px;margin:auto;min-height:100vh;display:flex;flex-direction:column}
+header{padding:22px 18px 14px;border-bottom:1px solid var(--line)}
+.eyebrow{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);font-weight:800}
+h1{font-size:clamp(20px,4vw,29px);line-height:1.17;margin:7px 0 6px}
+.subtitle{color:var(--muted);font-size:13px;line-height:1.45}
+main{padding:16px 16px 28px}
+.stage{position:relative;background:#05090f;border:1px solid var(--line);border-radius:13px;overflow:hidden}
+#mainSlide{width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#05090f}
+.nav{position:absolute;top:50%;transform:translateY(-50%);border:0;border-radius:9px;background:#08111dcc;color:white;font-size:27px;width:42px;height:54px;cursor:pointer}
+#prev{left:8px}#next{right:8px}
+.counter{position:absolute;top:10px;left:10px;background:#08111dcc;border:1px solid #ffffff30;border-radius:7px;padding:4px 8px;font-size:11px;color:#e8eef7}
+.controls{display:flex;align-items:center;gap:10px;margin:11px 2px 8px}
+#count{font-size:12px;font-weight:750;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
+#progress{display:flex;gap:4px;flex:1}
+#progress button{height:4px;flex:1;border:0;border-radius:5px;background:#34445c;padding:0;cursor:pointer}
+#progress button.active{background:var(--accent)}
+.thumb-label{font-size:10px;color:var(--muted);letter-spacing:.1em;font-weight:800;margin:14px 2px 7px}
+#thumbs{display:flex;gap:9px;overflow-x:auto;padding:2px 2px 10px;scrollbar-width:thin;scroll-snap-type:x mandatory}
+.thumb{flex:0 0 112px;padding:0;border:2px solid transparent;border-radius:8px;overflow:hidden;background:var(--panel);opacity:.62;cursor:pointer;scroll-snap-align:start}
+.thumb.active{border-color:var(--accent);opacity:1}
+.thumb img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover}
+.thumb span{display:block;text-align:left;padding:5px 6px;font-size:10px;color:var(--muted);font-weight:700}
+.info{margin-top:10px;padding:18px;background:var(--panel);border:1px solid var(--line);border-radius:13px}
+.kicker{color:var(--accent);font-size:10px;letter-spacing:.11em;font-weight:850;margin-bottom:7px}
+h2{font-size:19px;line-height:1.25;margin:0 0 9px}
+#description{font-size:14px;line-height:1.65;color:#c4d0df;margin:0}
+.bottom{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:15px}
+.bottom button{border:1px solid var(--line);background:var(--panel2);border-radius:8px;padding:9px 13px;color:var(--text);font-weight:700;cursor:pointer}
+.bottom button:disabled{opacity:.35;cursor:default}
+.pdf{display:inline-block;margin-top:18px;color:var(--accent);font-size:13px;text-decoration:none}
+footer{padding:0 18px 24px;text-align:center;color:#73849b;font-size:11px}
+@media(min-width:700px){main{padding:22px 24px 34px}header{padding:28px 24px 18px}.thumb{flex-basis:132px}.info{padding:22px}}
+</style>
 </head>
 <body>
+<div id="app">
 <header>
-  <div class="wrap">
-    <div class="eyebrow">Página de apoio à apresentação</div>
-    <h1>O Futuro da Resistência ao VIH-1 na América do Sul</h1>
-    <p class="authors">Redes de Transmissão Sustentam a Resistência aos NRTI na Era do DTG, com Implicações para PrEP e Novos Antirretrovirais</p>
-    <p class="authors">Gonçalo Queirós*, Beatriz Valadas*, Rayana Mendes, Mafalda N. Miranda, Marta Pingarilho, Luisa Lobo, Ricardo Parreira, João Piedade, Annemarie M. J. Wensing, Jeroen J. A. van Kampen, Michael Jordan, Ana B. Abecasis, Monick Guimarães, Cruz S. Sebastião e Victor Pimentel.<br>* Estes autores partilham primeira autoria.</p>
-  </div>
+ <div class="eyebrow">Apresentação científica · IHMT / NOVA</div>
+ <h1>O Futuro da Resistência ao VIH-1 na América do Sul</h1>
+ <div class="subtitle">Redes de transmissão sustentam a resistência aos NRTI na era do DTG, com implicações para PrEP e novos antirretrovirais</div>
 </header>
-
-<main class="wrap">
-  <section class="intro">
-    <h2>Bem-vindo(a)</h2>
-    <p>Esta página acompanha a apresentação e reúne os diapositivos num formato que pode ser consultado no telemóvel. Pode percorrer a apresentação completa ou abrir as notas de cada secção para rever as principais mensagens.</p>
-    <div class="actions">
-      <a class="button" href="presentation.pdf" target="_blank" rel="noopener">Abrir / descarregar PDF</a>
-      <a class="button secondary" href="#notas">Consultar notas por diapositivo</a>
-    </div>
-  </section>
-
-  <section class="panel" id="apresentacao">
-    <h2>Apresentação completa</h2>
-    <p class="muted">Use os controlos do leitor para navegar entre os 13 diapositivos. Se o leitor incorporado não funcionar no seu telemóvel, utilize o botão “Abrir / descarregar PDF” acima.</p>
-    <iframe class="viewer" src="presentation.pdf#view=FitH" title="Apresentação completa em PDF"></iframe>
-  </section>
-
-  <section class="panel" id="notas">
-    <h2>Notas e enquadramento por diapositivo</h2>
-    <p class="muted">As notas abaixo sintetizam o conteúdo apresentado nos diapositivos; não substituem os dados e figuras do PDF.</p>
-    <div class="slides">
-      <details>
-        <summary>1. Título e autoria</summary>
-        <div class="detail-body"><p>Apresentação sobre a evolução da resistência do VIH-1 na América do Sul, com foco nas redes de transmissão, na resistência aos NRTI na era do dolutegravir (DTG) e nas implicações para a PrEP e novos antirretrovirais. Gonçalo Queirós e Beatriz Valadas partilham a primeira autoria.</p></div>
-      </details>
-      <details>
-        <summary>2. Contexto — Epidemiologia da América do Sul</summary>
-        <div class="detail-body"><p>O diapositivo contextualiza a dimensão da epidemia: em 2025, mais de 2 milhões de pessoas viviam com VIH na América do Sul. Apresenta também a meta da UNAIDS para 2030 de reduzir em 90% os novos casos face a 2010 e a evolução dos novos casos de VIH na América Latina.</p></div>
-      </details>
-      <details>
-        <summary>3. Contexto — Distribuição dos subtipos</summary>
-        <div class="detail-body"><p>O subtipo B é apresentado como predominante (&gt;75%) na região. O subtipo C (&gt;8%) concentra-se sobretudo no Sul do Brasil, Argentina e Uruguai; o F1 (&gt;6%) está presente no Brasil e países circundantes. São ainda referidas formas recombinantes B/C/F1 (&gt;9%). A distribuição dos subtipos pode influenciar os perfis de resistência e a dinâmica dos clusters de transmissão.</p></div>
-      </details>
-      <details>
-        <summary>4. Contexto — Dependência no núcleo de NRTI</summary>
-        <div class="detail-body"><p>O uso de TDF/3TC (ou FTC)/DTG como primeira linha e a expansão da PrEP colocam em destaque a dependência comum do núcleo de NRTI. O diapositivo salienta K65R, associada a resistência intermédia ao TDF, e M184V/I, associada a resistência de alto nível a 3TC e FTC. A sua coocorrência no mesmo genoma pode comprometer a atividade do núcleo de NRTI.</p></div>
-      </details>
-      <details>
-        <summary>5. Métodos — Aquisição e curadoria do dataset</summary>
-        <div class="detail-body"><p>O fluxo de trabalho combina dados de histórico de tratamento com sequências PR+RT dos subtipos B, C e F1 da América do Sul, obtidas a partir do LANL, e a contribuição laboratorial de Monick L. Guimarães. O processamento integrado inclui análises filogenéticas e de clusters de resistência através do JAGUAR, seguido de análise estatística em Python.</p></div>
-      </details>
-      <details>
-        <summary>6. Métodos — Estratificação das sequências</summary>
-        <div class="detail-body"><p>As sequências são estratificadas geográfica e temporalmente. A linha temporal distingue a era pré-cápsula única, a era pré-DTG e a era do DTG, assinalando a aprovação da cápsula única e a adoção do DTG como regime de primeira linha no Brasil.</p></div>
-      </details>
-      <details>
-        <summary>7. Resultados e discussão — Prevalências de DRMs</summary>
-        <div class="detail-body"><p>São comparadas as prevalências de resistência transmitida (TDR) e adquirida (ADR) entre os subtipos B, C e F1. As prevalências de ADR são geralmente mais elevadas no subtipo B e mais baixas no subtipo C. As diferenças entre subtipos são estatisticamente significativas para as classes/mutações apresentadas, com exceção da K65R.</p></div>
-      </details>
-      <details>
-        <summary>8. Resultados e discussão — Distribuição regional</summary>
-        <div class="detail-body"><p>Este diapositivo apresenta a prevalência de DRMs por classe de antirretroviral e região. Consulte a figura no PDF para observar a distribuição geográfica dos resultados.</p></div>
-      </details>
-      <details>
-        <summary>9. Resultados e discussão — Mutações e clusters</summary>
-        <div class="detail-body"><p>O texto do diapositivo destaca a elevada prevalência de mutações de resistência aos NRTI, como M184I/V, e a deteção de mutações comuns associadas a resistência intermédia e/ou elevada a NNRTI de segunda geração (DOR, ETR e RPV). As mutações mais comuns foram também detetadas em sequências agrupadas em clusters, embora com menor prevalência.</p></div>
-      </details>
-      <details>
-        <summary>10. Resultados e discussão — Clusters, geografia e tempo</summary>
-        <div class="detail-body"><p>O diapositivo indica que a pertença a um cluster é globalmente um fator protetor, mas que sequências em clusters ativos apresentam maior risco de resistência ao núcleo de NRTI. São também descritas diferenças geográficas e uma diminuição da prevalência na era pré-DTG, seguida de um aumento na era do DTG.</p></div>
-      </details>
-      <details>
-        <summary>11. Resultados e discussão</summary>
-        <div class="detail-body"><p>Consulte a figura e os elementos visuais deste diapositivo no PDF da apresentação.</p></div>
-      </details>
-      <details>
-        <summary>12. Conclusões-chave</summary>
-        <div class="detail-body"><p>As dinâmicas de resistência adquirida diferem entre subtipos e regiões. A baixa prevalência de resistência transmitida a NRTI, incluindo M184I/V e K65R, é encorajadora, mas a sua possível transmissão e circulação em clusters merece atenção. São também assinaladas mutações NNRTI relevantes para regimes com DOR ou RPV e um aumento recente na deteção de mutações de resistência na era do DTG, sobretudo após 2017.</p></div>
-      </details>
-      <details>
-        <summary>13. Agradecimentos</summary>
-        <div class="detail-body"><p>Diapositivo de agradecimentos aos colaboradores e investigadores envolvidos no trabalho.</p></div>
-      </details>
-    </div>
-  </section>
-  <footer>Material de apoio à apresentação científica. Para consultar os dados completos, figuras e tabelas, utilize o PDF integral.</footer>
+<main>
+ <div class="stage">
+  <img id="mainSlide" src="assets/slide-01.jpg" alt="Diapositivo 1">
+  <div class="counter" id="counter">1 / 13</div>
+  <button class="nav" id="prev" aria-label="Diapositivo anterior">‹</button>
+  <button class="nav" id="next" aria-label="Diapositivo seguinte">›</button>
+ </div>
+ <div class="controls"><span id="count">1 / 13</span><div id="progress" aria-label="Navegação por diapositivo"></div></div>
+ <div class="thumb-label">SELECIONAR DIAPOSITIVO</div>
+ <div id="thumbs" aria-label="Miniaturas dos diapositivos"></div>
+ <section class="info" aria-live="polite">
+  <div class="kicker" id="kicker"></div>
+  <h2 id="title"></h2>
+  <p id="description"></p>
+ </section>
+ <div class="bottom">
+  <button id="prevBottom">‹ Anterior</button>
+  <button id="nextBottom">Seguinte ›</button>
+ </div>
+ <a class="pdf" href="presentation.pdf" target="_blank" rel="noopener">Abrir ou descarregar a apresentação completa (PDF) ↗</a>
 </main>
+<footer>Material de apoio à apresentação · Se estiver a usar um telemóvel, deslize a faixa de miniaturas horizontalmente para escolher um diapositivo.</footer>
+</div>
+<script>
+const SLIDES = {n:1, img:'assets/slide-01.jpg', kicker:'TÍTULO', title:'O Futuro da Resistência ao VIH-1 na América do Sul', description:'Redes de transmissão, resistência aos NRTI na era do DTG e implicações para PrEP e novos antirretrovirais. Gonçalo Queirós e Beatriz Valadas partilham a primeira autoria.'},
+{n:2, img:'assets/slide-02.jpg', kicker:'CONTEXTO · EPIDEMIOLOGIA', title:'A epidemia de VIH na América do Sul', description:'Em 2025, mais de 2 milhões de pessoas viviam com VIH na América do Sul. O diapositivo enquadra a evolução dos novos casos na América Latina e a meta da UNAIDS para 2030: reduzir em 90% os novos casos face a 2010.'},
+{n:3, img:'assets/slide-03.jpg', kicker:'CONTEXTO · DIVERSIDADE GENÉTICA', title:'Distribuição dos subtipos na América do Sul', description:'O subtipo B é predominante na região. O subtipo C concentra-se sobretudo no Sul do Brasil, Argentina e Uruguai; o F1 está presente no Brasil e países circundantes. São também descritas formas recombinantes B/C/F1. Esta diversidade pode influenciar os perfis de resistência e a dinâmica dos clusters de transmissão.'},
+{n:4, img:'assets/slide-04.jpg', kicker:'CONTEXTO · NRTI', title:'Dependência partilhada do núcleo de NRTI', description:'Os regimes TDF/3TC (ou FTC)/DTG e a PrEP dependem de um núcleo de NRTI comum. K65R está associada a resistência intermédia ao TDF, enquanto M184V/I confere resistência de alto nível a 3TC e FTC. A coocorrência destas mutações no mesmo genoma pode comprometer a atividade do núcleo.'},
+{n:5, img:'assets/slide-05.jpg', kicker:'MÉTODOS · DATASET', title:'Aquisição e curadoria do dataset', description:'O fluxo de trabalho integra dados de histórico de tratamento e sequências PR+RT dos subtipos B, C e F1 da América do Sul obtidas a partir do LANL, incluindo a contribuição laboratorial de Monick L. Guimarães. Seguem-se processamento integrado, análises filogenéticas e de clusters pelo JAGUAR e análise estatística em Python.'},
+{n:6, img:'assets/slide-06.jpg', kicker:'MÉTODOS · ESTRATIFICAÇÃO', title:'Estratificação geográfica e temporal', description:'As sequências foram estratificadas geográfica e temporalmente. A linha temporal distingue a era pré-cápsula única, a era pré-DTG e a era do DTG, assinalando a aprovação da cápsula única e a adoção do DTG como regime de primeira linha no Brasil.'},
+{n:7, img:'assets/slide-07.jpg', kicker:'RESULTADOS · TDR E ADR', title:'Prevalências de mutações de resistência', description:'O diapositivo compara resistência transmitida (TDR) e adquirida (ADR) entre os subtipos B, C e F1. Para a maioria das classes e mutações apresentadas, as prevalências de ADR são mais elevadas no subtipo B e mais baixas no subtipo C. As diferenças são significativas, com exceção da K65R.'},
+{n:8, img:'assets/slide-08.jpg', kicker:'RESULTADOS · GEOGRAFIA', title:'Prevalência de DRMs por classe e região', description:'A figura apresenta a distribuição regional da prevalência de mutações de resistência por classe de antirretroviral. Consulte o diapositivo ampliado para comparar os padrões geográficos apresentados.'},
+{n:9, img:'assets/slide-09.jpg', kicker:'RESULTADOS · MUTAÇÕES E CLUSTERS', title:'Mutações relevantes e a sua presença em clusters', description:'Além da elevada prevalência de mutações de resistência aos NRTI, como M184I/V, foram observadas mutações comuns associadas a resistência intermédia e/ou elevada a NNRTI de segunda geração, incluindo DOR, ETR e RPV. As mutações mais comuns foram também detetadas em sequências em cluster, embora com menor prevalência.'},
+{n:10, img:'assets/slide-10.jpg', kicker:'RESULTADOS · DINÂMICAS', title:'Clusters ativos, geografia e evolução temporal', description:'Apesar de a pertença a um cluster ser apresentada como fator protetor, sequências em clusters ativos apresentam maior risco de resistência ao núcleo de NRTI. O diapositivo descreve ainda diferenças geográficas e uma diminuição da prevalência na era pré-DTG, seguida de um aumento na era do DTG.'},
+{n:11, img:'assets/slide-11.jpg', kicker:'RESULTADOS', title:'Resultados adicionais', description:'Consulte a figura e os elementos visuais deste diapositivo. Esta versão mantém o conteúdo gráfico original da apresentação, sem acrescentar interpretações que não estejam explicitadas no diapositivo.'},
+{n:12, img:'assets/slide-12.jpg', kicker:'CONCLUSÕES', title:'Principais conclusões', description:'As dinâmicas de resistência adquirida diferem entre subtipos e regiões. A baixa prevalência de resistência transmitida a NRTI é encorajadora, mas a possível transmissão e circulação em clusters merece atenção. Foram também identificadas mutações NNRTI relevantes para regimes com DOR ou RPV, bem como um aumento recente na deteção de mutações de resistência na era do DTG.'},
+{n:13, img:'assets/slide-13.jpg', kicker:'AGRADECIMENTOS', title:'Agradecimentos', description:'Agradecimento aos colaboradores e investigadores envolvidos no trabalho, conforme apresentado no diapositivo.'};
+let current = 0;
+const mainSlide = document.getElementById('mainSlide');
+const thumbs = document.getElementById('thumbs');
+const progress = document.getElementById('progress');
+function selectSlide(index){
+ current = Math.max(0, Math.min(SLIDES.length-1,index));
+ const s=SLIDES[current];
+ mainSlide.src=s.img;
+ mainSlide.alt='Diapositivo '+s.n;
+ document.getElementById('counter').textContent=(current+1)+' / '+SLIDES.length;
+ document.getElementById('count').textContent=(current+1)+' / '+SLIDES.length;
+ document.getElementById('kicker').textContent=s.kicker;
+ document.getElementById('title').textContent=s.title;
+ document.getElementById('description').textContent=s.description;
+ [...thumbs.children].forEach((el,i)=>{el.classList.toggle('active',i===current);if(i===current)el.scrollIntoView({behavior:'smooth',block:'nearest',inline:'nearest'});});
+ [...progress.children].forEach((el,i)=>el.classList.toggle('active',i===current));
+ document.getElementById('prev').disabled=current===0;
+ document.getElementById('prevBottom').disabled=current===0;
+ document.getElementById('next').disabled=current===SLIDES.length-1;
+ document.getElementById('nextBottom').disabled=current===SLIDES.length-1;
+}
+SLIDES.forEach((s,i)=>{
+ const b=document.createElement('button');b.className='thumb';b.type='button';b.setAttribute('aria-label','Abrir diapositivo '+s.n);
+ const img=document.createElement('img');img.src=s.img;img.alt='';
+ const label=document.createElement('span');label.textContent=String(s.n).padStart(2,'0')+' · '+s.kicker;
+ b.append(img,label);b.addEventListener('click',()=>selectSlide(i));thumbs.append(b);
+ const p=document.createElement('button');p.type='button';p.setAttribute('aria-label','Ir para diapositivo '+s.n);p.addEventListener('click',()=>selectSlide(i));progress.append(p);
+});
+['prev','prevBottom'].forEach(id=>document.getElementById(id).addEventListener('click',()=>selectSlide(current-1)));
+['next','nextBottom'].forEach(id=>document.getElementById(id).addEventListener('click',()=>selectSlide(current+1)));
+document.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')selectSlide(current-1);if(e.key==='ArrowRight')selectSlide(current+1)});
+let touchX=0;
+mainSlide.addEventListener('touchstart',e=>{touchX=e.changedTouches[0].screenX},{passive:true});
+mainSlide.addEventListener('touchend',e=>{const dx=e.changedTouches[0].screenX-touchX;if(Math.abs(dx)>55)selectSlide(current+(dx<0?1:-1))},{passive:true});
+selectSlide(0);
+</script>
 </body>
 </html>
