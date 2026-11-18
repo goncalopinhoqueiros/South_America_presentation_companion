@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="description" content="Acompanhe a apresentação sobre resistência ao VIH-1 na América do Sul, diapositivo a diapositivo.">
+<title>Resistência ao VIH-1 na América do Sul · Apresentação</title>
+<style>
+:root{--bg:#0b1422;--panel:#142238;--panel2:#101d31;--line:#293c58;--text:#edf3fb;--muted:#a5b4c8;--accent:#50c7b4;--accent2:#f0b64b;--font:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font-family:var(--font)}
+body{ -webkit-font-smoothing:antialiased}
+#app{max-width:900px;margin:auto;min-height:100vh;display:flex;flex-direction:column}
+header{padding:22px 18px 14px;border-bottom:1px solid var(--line)}
+.eyebrow{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);font-weight:800}
+h1{font-size:clamp(20px,4vw,29px);line-height:1.17;margin:7px 0 6px}
+.subtitle{color:var(--muted);font-size:13px;line-height:1.45}
+main{padding:16px 16px 28px}
+.stage{position:relative;background:#05090f;border:1px solid var(--line);border-radius:13px;overflow:hidden}
+#mainSlide{width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#05090f}
+.nav{position:absolute;top:50%;transform:translateY(-50%);border:0;border-radius:9px;background:#08111dcc;color:white;font-size:27px;width:42px;height:54px;cursor:pointer}
+#prev{left:8px}#next{right:8px}
+.counter{position:absolute;top:10px;left:10px;background:#08111dcc;border:1px solid #ffffff30;border-radius:7px;padding:4px 8px;font-size:11px;color:#e8eef7}
+.controls{display:flex;align-items:center;gap:10px;margin:11px 2px 8px}
+#count{font-size:12px;font-weight:750;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
+#progress{display:flex;gap:4px;flex:1}
+#progress button{height:4px;flex:1;border:0;border-radius:5px;background:#34445c;padding:0;cursor:pointer}
+#progress button.active{background:var(--accent)}
+.thumb-label{font-size:10px;color:var(--muted);letter-spacing:.1em;font-weight:800;margin:14px 2px 7px}
+#thumbs{display:flex;gap:9px;overflow-x:auto;padding:2px 2px 10px;scrollbar-width:thin;scroll-snap-type:x mandatory}
+.thumb{flex:0 0 112px;padding:0;border:2px solid transparent;border-radius:8px;overflow:hidden;background:var(--panel);opacity:.62;cursor:pointer;scroll-snap-align:start}
+.thumb.active{border-color:var(--accent);opacity:1}
+.thumb img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover}
+.thumb span{display:block;text-align:left;padding:5px 6px;font-size:10px;color:var(--muted);font-weight:700}
+.info{margin-top:10px;padding:18px;background:var(--panel);border:1px solid var(--line);border-radius:13px}
+.kicker{color:var(--accent);font-size:10px;letter-spacing:.11em;font-weight:850;margin-bottom:7px}
+h2{font-size:19px;line-height:1.25;margin:0 0 9px}
+#description{font-size:14px;line-height:1.65;color:#c4d0df;margin:0}
+.bottom{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:15px}
+.bottom button{border:1px solid var(--line);background:var(--panel2);border-radius:8px;padding:9px 13px;color:var(--text);font-weight:700;cursor:pointer}
+.bottom button:disabled{opacity:.35;cursor:default}
+.pdf{display:inline-block;margin-top:18px;color:var(--accent);font-size:13px;text-decoration:none}
+footer{padding:0 18px 24px;text-align:center;color:#73849b;font-size:11px}
+@media(min-width:700px){main{padding:22px 24px 34px}header{padding:28px 24px 18px}.thumb{flex-basis:132px}.info{padding:22px}}
+
+.supplementary{margin-top:34px;padding-top:26px;border-top:1px solid var(--line)}
+.supp-heading{margin-bottom:18px}
+.supp-heading h2{font-size:23px;margin:6px 0 8px}
+.supp-heading p{font-size:13px;line-height:1.6;color:var(--muted);max-width:680px;margin:0}
+.supp-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.supp-card{overflow:hidden;background:var(--panel);border:1px solid var(--line);border-radius:12px}
+.figure-open{display:block;width:100%;padding:0;border:0;background:#fff;cursor:zoom-in}
+.figure-open img{display:block;width:100%;height:auto;max-height:340px;object-fit:contain;background:#fff}
+.supp-copy{padding:13px 14px 15px}
+.supp-label{font-size:10px;letter-spacing:.12em;font-weight:850;color:var(--accent);margin-bottom:5px}
+.supp-copy h3{font-size:15px;line-height:1.3;margin:0 0 7px;color:var(--text)}
+.supp-copy p{font-size:12px;line-height:1.55;color:var(--muted);margin:0}
+.figure-dialog{width:min(1100px,94vw);max-width:none;max-height:92vh;padding:14px;border:1px solid #52647b;border-radius:14px;background:#101d31;color:#edf3fb}
+.figure-dialog::backdrop{background:#020711dd}
+.dialog-top{display:flex;justify-content:space-between;align-items:center;gap:12px;font-weight:800;margin-bottom:10px}
+.dialog-top button{border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--text);padding:7px 10px;cursor:pointer}
+.figure-dialog img{display:block;max-width:100%;max-height:70vh;width:auto;height:auto;margin:auto;background:#fff}
+.figure-dialog p{font-size:13px;line-height:1.6;color:#c4d0df;margin:12px 2px 2px}
+@media(max-width:620px){.supp-grid{grid-template-columns:1fr}.figure-open img{max-height:none}.supp-copy{padding:12px}}
+
+</style>
+</head>
+<body>
+<div id="app">
+<header>
+ <div class="eyebrow">Comunicação oral · XV Congresso Nacional VIH/SIDA </div>
+ <h1>O Futuro da Resistência ao VIH-1 na América do Sul</h1>
+ <div class="subtitle">Redes de transmissão sustentam a resistência aos NRTI na era do DTG, com implicações para PrEP e novos antirretrovirais</div>
+</header>
+<main>
+ <div class="stage">
+  <img id="mainSlide" src="assets/slide-01.jpg" alt="Diapositivo 1">
+  <div class="counter" id="counter">1 / 10</div>
+  <button class="nav" id="prev" aria-label="Diapositivo anterior">‹</button>
+  <button class="nav" id="next" aria-label="Diapositivo seguinte">›</button>
+ </div>
+ <div class="controls"><span id="count">1 / 13</span><div id="progress" aria-label="Navegação por diapositivo"></div></div>
+ <div class="thumb-label">SELECIONAR DIAPOSITIVO</div>
+ <div id="thumbs" aria-label="Miniaturas dos diapositivos"></div>
+ <section class="info" aria-live="polite">
+  <div class="kicker" id="kicker"></div>
+  <h2 id="title"></h2>
+  <p id="description"></p>
+ </section>
+ <div class="bottom">
+  <button id="prevBottom">‹ Anterior</button>
+  <button id="nextBottom">Seguinte ›</button>
+ </div>
+ <a class="pdf" href="presentation.pdf" target="_blank" rel="noopener">Abrir ou descarregar a apresentação completa (PDF) ↗</a>
+
+ <section class="supplementary" id="supplementary">
+  <div class="supp-heading">
+   <div class="eyebrow">ANÁLISES ADICIONAIS</div>
+   <h2>Resultados suplementares</h2>
+   <p>Figuras complementares à apresentação oral. Selecione uma figura para a ampliar e consultar a respetiva descrição.</p>
+  </div>
+  <div class="supp-grid">
+   <article class="supp-card">
+    <button class="figure-open" type="button" data-figure="0" aria-label="Ampliar Figura S1">
+     <img src="supplementary/figure-S1.png" alt="Tendências temporais da prevalência de DRMs por classe de fármaco, para prevalência global, ADR e TDR">
+    </button>
+    <div class="supp-copy"><div class="supp-label">FIGURA S1</div><h3>Tendências temporais por classe de fármaco</h3>
+     <p>Evolução da prevalência de mutações de resistência (DRMs) ao longo do tempo, apresentada globalmente e separada em resistência adquirida (ADR) e transmitida (TDR), para NRTI, NNRTI e PI. As linhas representam as tendências temporais indicadas nos painéis.</p></div>
+   </article>
+   <article class="supp-card">
+    <button class="figure-open" type="button" data-figure="1" aria-label="Ampliar Figura S2">
+     <img src="supplementary/figure-S2.png" alt="Tendências temporais da prevalência de DRMs por subtipo B, C e F1">
+    </button>
+    <div class="supp-copy"><div class="supp-label">FIGURA S2</div><h3>Tendências temporais por subtipo</h3>
+     <p>Prevalência global, ADR e TDR ao longo do tempo, estratificada pelos subtipos B, C e F1. Os painéis permitem comparar a direção e a significância estatística das tendências em cada subtipo.</p></div>
+   </article>
+   <article class="supp-card">
+    <button class="figure-open" type="button" data-figure="2" aria-label="Ampliar Figura S3">
+     <img src="supplementary/figure-S3.png" alt="Prevalência das mutações de resistência mais frequentes por classe de fármaco e subtipo">
+    </button>
+    <div class="supp-copy"><div class="supp-label">FIGURA S3</div><h3>Principais mutações por classe e subtipo</h3>
+     <p>Prevalência das mutações de resistência mais frequentes às classes NRTI, NNRTI e PI nos subtipos B, C e F1. Os valores e denominadores apresentados nas barras permitem comparar a frequência relativa das mutações entre subtipos.</p></div>
+   </article>
+   <article class="supp-card">
+    <button class="figure-open" type="button" data-figure="3" aria-label="Ampliar Figura S4">
+     <img src="supplementary/figure-S4.png" alt="Odds ratios para positividade de K65 e M184 em comparações regionais com o Brasil">
+    </button>
+    <div class="supp-copy"><div class="supp-label">FIGURA S4</div><h3>Comparações regionais de K65 e M184</h3>
+     <p>Odds ratios para a presença de K65 e M184 nas comparações entre o Brasil e as regiões Norte, Sul e Oeste. São apresentados os intervalos de confiança, os valores de χ² e os valores de p indicados na figura. A linha vertical corresponde a OR = 1.</p></div>
+   </article>
+   <article class="supp-card">
+    <button class="figure-open" type="button" data-figure="4" aria-label="Ampliar Figura S5">
+     <img src="supplementary/figure-S5.png" alt="Níveis globais de resistência a NRTI e NNRTI">
+    </button>
+    <div class="supp-copy"><div class="supp-label">FIGURA S5</div><h3>Níveis globais de resistência a NRTI e NNRTI</h3>
+     <p>Distribuição dos níveis de resistência aos fármacos FTC, 3TC, TDF e RPV, de acordo com as categorias apresentadas na legenda e estratificada por subtipo. A figura permite comparar a contribuição relativa de resistência potencialmente baixa, baixa, intermédia e elevada.</p></div>
+   </article>
+   <article class="supp-card">
+    <button class="figure-open" type="button" data-figure="5" aria-label="Ampliar Figura S6">
+     <img src="supplementary/figure-S6.png" alt="Número de clusters por origem regional">
+    </button>
+    <div class="supp-copy"><div class="supp-label">FIGURA S6</div><h3>Clusters por origem regional</h3>
+     <p>Número e proporção de clusters segundo a origem regional atribuída: Brasil, Norte, Sul, Oeste ou origem desconhecida. A maioria dos clusters apresentados tem origem brasileira.</p></div>
+   </article>
+   <article class="supp-card">
+    <button class="figure-open" type="button" data-figure="6" aria-label="Ampliar Figura S7">
+     <img src="supplementary/figure-S7.png" alt="Número de clusters monorregionais e inter-regionais">
+    </button>
+    <div class="supp-copy"><div class="supp-label">FIGURA S7</div><h3>Regionalidade dos clusters</h3>
+     <p>Distribuição dos clusters segundo a sua regionalidade: monorregionais ou inter-regionais. A figura apresenta 3 808 clusters monorregionais (99%) e 47 inter-regionais (1%).</p></div>
+   </article>
+   <article class="supp-card">
+    <button class="figure-open" type="button" data-figure="7" aria-label="Ampliar Figura S8">
+     <img src="supplementary/figure-S8.png" alt="Atividade, sobreposição, origem e mutações de backbone dos clusters ao longo das eras terapêuticas">
+    </button>
+    <div class="supp-copy"><div class="supp-label">FIGURA S8</div><h3>Caracterização dos clusters</h3>
+     <p>Caracterização da temporalidade, origem e presença de DRMs dos clusters.</p></div>
+   </article>
+  </div>
+ </section>
+ <dialog id="figureDialog" class="figure-dialog">
+  <div class="dialog-top"><span id="dialogTitle">Figura suplementar</span><button id="dialogClose" type="button" aria-label="Fechar">Fechar ✕</button></div>
+  <img id="dialogImage" src="" alt="">
+  <p id="dialogDescription"></p>
+ </dialog>
+
+</main>
+<footer>Material de apoio à apresentação · Se estiver a usar um telemóvel, deslize a faixa de miniaturas horizontalmente para escolher um diapositivo.</footer>
+</div>
+<script>
+const SLIDES = [
+ {n:1,img:'assets/slide-01.jpg',kicker:'APRESENTAÇÃO',title:'O Futuro da Resistência ao VIH-1 na América do Sul',description:'Redes de transmissão sustentam a resistência aos NRTI na era do DTG, com implicações para PrEP e novos antirretrovirais. Gonçalo Queirós e Beatriz Valadas partilham a primeira autoria.'},
+ {n:2,img:'assets/slide-02.jpg',kicker:'CONTEXTO · NÚCLEO DE NRTI',title:'Dependência no núcleo de NRTI',description:'A adoção de tenofovir/lamivudina (ou emtricitabina)/dolutegravir como regime de primeira linha, acompanhada pela expansão da PrEP, aumentou a importância da resistência pré-existente. A dependência partilhada de TDF e 3TC ou FTC torna particularmente relevantes K65R, associada a resistência intermédia a TDF, e M184V/I, associada a resistência de alto nível a 3TC e FTC.'},
+ {n:3,img:'assets/slide-03.jpg',kicker:'MÉTODOS · DATASET',title:'Aquisição e curadoria do dataset',description:'O dataset integrou sequências PR+RT dos subtipos B, C e F1 da América do Sul obtidas no LANL, informação de histórico terapêutico e contributos laboratoriais de Monick L. Guimarães. As sequências foram processadas para análises filogenéticas, de clusters e de resistência com o JAGUAR, seguindo-se a análise estatística em Python.'},
+ {n:4,img:'assets/slide-04.jpg',kicker:'MÉTODOS · ESTRATIFICAÇÃO',title:'Estratificação das sequências',description:'As sequências foram estratificadas geograficamente em Brasil, Norte, Sul e Oeste. A estratificação temporal distinguiu a era pré-cápsula única, a era pré-DTG e a era do DTG, com pontos de transição em 2007 e 2017. Foram considerados ativos os clusters com sequências detetadas na era do DTG.'},
+ {n:5,img:'assets/slide-05.jpg',kicker:'RESULTADOS · PREVALÊNCIA DE DRMs',title:'Prevalências de resistência por classe e subtipo',description:'A tabela compara a prevalência de resistência transmitida (TDR) e adquirida (ADR) nos subtipos B, C e F1. O subtipo B apresentou as maiores prevalências de DRMs em pessoas com histórico de tratamento, enquanto o subtipo C apresentou as menores. Estas diferenças foram significativas para todas as classes ou mutações analisadas, com exceção da K65R.'},
+ {n:6,img:'assets/slide-06.jpg',kicker:'RESULTADOS · GEOGRAFIA',title:'Prevalência de DRMs por classe de ARV e região',description:'A análise geográfica revelou diferenças regionais na prevalência de mutações de resistência. O Sul apresentou consistentemente prevalências elevadas, especialmente para NRTI, enquanto o Norte apresentou as prevalências mais baixas.'},
+ {n:7,img:'assets/slide-07.jpg',kicker:'RESULTADOS · DRMs E CLUSTERS',title:'Resistência e pertença a clusters',description:'Para além da elevada prevalência de mutações de resistência a NRTI, como M184I/V, três das mutações mais comuns contra NNRTI conferiam resistência de nível intermédio e/ou alto a NNRTI de segunda geração, incluindo DOR, ETR e RPV. Apesar de a pertença a um cluster surgir como fator protetor, as sequências em clusters ativos apresentaram maior risco de resistência ao núcleo de NRTI.'},
+ {n:8,img:'assets/slide-08.jpg',kicker:'RESULTADOS · REGIÃO E TEMPORALIDADE',title:'Geografia e evolução temporal',description:'As sequências do Oeste e do Norte estavam associadas a uma prevalência inferior de DRMs comparativamente ao Brasil, enquanto o Sul apresentava uma prevalência superior. Temporalmente, a prevalência diminuiu na era pré-DTG, mas aumentou na era do DTG, com um aumento superior à diminuição anterior.'},
+ {n:9,img:'assets/slide-09.jpg',kicker:'CONCLUSÕES',title:'Conclusões-chave',description:'As dinâmicas de resistência diferem entre subtipos e regiões: o subtipo C apresenta geralmente prevalências mais baixas e o Sul prevalências superiores. A baixa prevalência de resistência transmitida a M184I/V e K65R é encorajadora, embora a sua possível circulação em clusters mereça atenção. Foram também identificadas mutações NNRTI relevantes para regimes com DOR ou RPV e um aumento recente na deteção de DRMs na era do DTG.'},
+ {n:10,img:'assets/slide-10.jpg',kicker:'AGRADECIMENTOS',title:'Agradecimentos e colaborações',description:'Agradecimento a todos os colaboradores e investigadores envolvidos neste trabalho, incluindo Beatriz Valadas, Rayana Mendes, Mafalda N. Miranda, Marta Pingarilho, Luisa Lobo, Ricardo Parreira, João Piedade, Annemarie M. J. Wensing, Jeroen J. A. van Kampen, Michael Jordan, Ana B. Abecasis, Monick Guimarães, Cruz S. Sebastião e Victor Pimentel.'}
+];
+let current = 0;
+const mainSlide = document.getElementById('mainSlide');
+const thumbs = document.getElementById('thumbs');
+const progress = document.getElementById('progress');
+function selectSlide(index){
+ current = Math.max(0, Math.min(SLIDES.length-1,index));
+ const s=SLIDES[current];
+ mainSlide.src=s.img;
+ mainSlide.alt='Diapositivo '+s.n;
+ document.getElementById('counter').textContent=(current+1)+' / '+SLIDES.length;
+ document.getElementById('count').textContent=(current+1)+' / '+SLIDES.length;
+ document.getElementById('kicker').textContent=s.kicker;
+ document.getElementById('title').textContent=s.title;
+ document.getElementById('description').textContent=s.description;
+ [...thumbs.children].forEach((el,i)=>{el.classList.toggle('active',i===current);if(i===current)el.scrollIntoView({behavior:'smooth',block:'nearest',inline:'nearest'});});
+ [...progress.children].forEach((el,i)=>el.classList.toggle('active',i===current));
+ document.getElementById('prev').disabled=current===0;
+ document.getElementById('prevBottom').disabled=current===0;
+ document.getElementById('next').disabled=current===SLIDES.length-1;
+ document.getElementById('nextBottom').disabled=current===SLIDES.length-1;
+}
+SLIDES.forEach((s,i)=>{
+ const b=document.createElement('button');b.className='thumb';b.type='button';b.setAttribute('aria-label','Abrir diapositivo '+s.n);
+ const img=document.createElement('img');img.src=s.img;img.alt='';
+ const label=document.createElement('span');label.textContent=String(s.n).padStart(2,'0')+' · '+s.kicker;
+ b.append(img,label);b.addEventListener('click',()=>selectSlide(i));thumbs.append(b);
+ const p=document.createElement('button');p.type='button';p.setAttribute('aria-label','Ir para diapositivo '+s.n);p.addEventListener('click',()=>selectSlide(i));progress.append(p);
+});
+['prev','prevBottom'].forEach(id=>document.getElementById(id).addEventListener('click',()=>selectSlide(current-1)));
+['next','nextBottom'].forEach(id=>document.getElementById(id).addEventListener('click',()=>selectSlide(current+1)));
+document.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')selectSlide(current-1);if(e.key==='ArrowRight')selectSlide(current+1)});
+let touchX=0;
+mainSlide.addEventListener('touchstart',e=>{touchX=e.changedTouches[0].screenX},{passive:true});
+mainSlide.addEventListener('touchend',e=>{const dx=e.changedTouches[0].screenX-touchX;if(Math.abs(dx)>55)selectSlide(current+(dx<0?1:-1))},{passive:true});
+selectSlide(0);
+
+const SUPPLEMENTARY = [
+ {title:'Figura S1 · Tendências temporais por classe de fármaco',src:'supplementary/figure-S1.png',description:'Evolução da prevalência de DRMs ao longo do tempo, globalmente e para ADR e TDR, nas classes NRTI, NNRTI e PI.'},
+ {title:'Figura S2 · Tendências temporais por subtipo',src:'supplementary/figure-S2.png',description:'Prevalência global, ADR e TDR ao longo do tempo, estratificada pelos subtipos B, C e F1.'},
+ {title:'Figura S3 · Principais mutações por classe e subtipo',src:'supplementary/figure-S3.png',description:'Prevalência das mutações de resistência mais frequentes às classes NRTI, NNRTI e PI nos subtipos B, C e F1.'},
+ {title:'Figura S4 · Comparações regionais de K65 e M184',src:'supplementary/figure-S4.png',description:'Odds ratios e intervalos de confiança para K65 e M184 nas comparações entre o Brasil e as regiões Norte, Sul e Oeste.'},
+ {title:'Figura S5 · Níveis globais de resistência a NRTI e NNRTI',src:'supplementary/figure-S5.png',description:'Distribuição dos níveis de resistência a FTC, 3TC, TDF e RPV, estratificada por subtipo.'},
+ {title:'Figura S6 · Clusters por origem regional',src:'supplementary/figure-S6.png',description:'Número e proporção de clusters segundo a origem regional atribuída.'},
+ {title:'Figura S7 · Regionalidade dos clusters',src:'supplementary/figure-S7.png',description:'Distribuição dos clusters monorregionais e inter-regionais.'},
+ {title:'Figura S8 · Caracterização dos clusters',src:'supplementary/figure-S8.png',description:'Caracterização da temporalidade, origem e presença de DRMs dos clusters.'}
+];
+const figureDialog=document.getElementById('figureDialog');
+document.querySelectorAll('.figure-open').forEach(button=>{
+ button.addEventListener('click',()=>{
+  const f=SUPPLEMENTARY[Number(button.dataset.figure)];
+  document.getElementById('dialogTitle').textContent=f.title;
+  document.getElementById('dialogImage').src=f.src;
+  document.getElementById('dialogImage').alt=f.title;
+  document.getElementById('dialogDescription').textContent=f.description;
+  figureDialog.showModal();
+ });
+});
+document.getElementById('dialogClose').addEventListener('click',()=>figureDialog.close());
+figureDialog.addEventListener('click',e=>{if(e.target===figureDialog)figureDialog.close()});
+
+</script>
+</body>
+</html>
